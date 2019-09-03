@@ -1,0 +1,17 @@
+{
+  "name": "benito",
+  "version": "1.0.0",
+  "description": "juego de simbiocrecion",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Korderoman",
+  "license": "MIT"
+}
