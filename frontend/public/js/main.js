@@ -16,13 +16,16 @@ function setup(){
         }
     }
     background(0);
-    //inicializamos el color:
-    color_actual={r:255,g:255,b:255};
-    console.log(malla_cuadrados[1].id);
+    
+
+}
+
+
+function draw(){
     malla_cuadrados.forEach(cuadrado=>{
         cuadrado.dibujarCuadrado();
-    })
-    menu_colores();
+    });
+    menu_colores();    
 }
 
 
@@ -59,7 +62,7 @@ function mouseClicked(){
     for(let fila=0;fila<(dy/h_c)-1;fila++){
         for(let columna=0;columna<dx/w_c;columna++){
             if((w_c*columna<mouseX && mouseX<w_c*(columna+1)) &&(h_c*fila<mouseY && mouseY<h_c*(fila+1))){
-                console.log(" fila: ", fila+1," columna: ",columna+1 );
+                //console.log(" fila: ", fila+1," columna: ",columna+1 );
                 let pos_aux=columna+5*fila;
                 let aux_x=malla_cuadrados[pos_aux].x;
                 let aux_y=malla_cuadrados[pos_aux].y;
@@ -90,15 +93,10 @@ function mouseClicked(){
 //el socket a la escucha
 //los adtos que recibe el socket son la posición, el id, y el color
 socket.on("redibujar",(datos)=>{
+    console.log(datos);
     malla_cuadrados.forEach(cuadrado=>{
         if(cuadrado.id==datos.id){
-            let aux_x=cuadrado.x;
-            let aux_y=cuadrado.y;
-            let aux_fila=cuadrado.fila;
-            let aux_columna=cuadrado.columna;
-            let aux_cuadrado=new Cuadrados(aux_x,aux_y,w_c,h_c,aux_fila,aux_columna,datos.mi_color);
-            aux_cuadrado.dibujarCuadrado();
-            malla_cuadrados[datos.id]=aux_cuadrado;
+            cuadrado.mi_color=datos.mi_color;
         }
     })
 })

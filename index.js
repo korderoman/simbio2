@@ -15,7 +15,7 @@ const io=IO_server(servidor);
 io.on("connection",(socket)=>{
     console.log("Conexión extablecida",socket.id);
     socket.on("dibujar",(datos)=>{
-        
+        console.log(datos);
         socket.broadcast.emit("redibujar",datos);
     })
 })
