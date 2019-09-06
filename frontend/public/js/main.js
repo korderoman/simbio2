@@ -1,16 +1,18 @@
 var socket=io();
 var dx=5*window.innerWidth/6; //variable general del ancho
 var dy=5*window.innerHeight/6; //variable general del alto
-var w_c=dx/5; // variable del ancho de un cuadrado
-var h_c=dy/6; //variable del alto de un cuadrado 
+var grilla_y=11;
+var grilla_x=10;
+var w_c=dx/grilla_x; // variable del ancho de un cuadrado
+var h_c=dy/grilla_y; //variable del alto de un cuadrado 
 var mando_colores=[]; //lista que almacena los cuadrados del mando
 var malla_cuadrados=[] //cuadrícula de cuadrados
 
 var color_actual;
 function setup(){
     let canvas=seteo_canvas(dx,dy);
-    for(fila=0;fila<5;fila++){
-        for(columna=0;columna<5;columna++){
+    for(fila=0;fila<grilla_y-1;fila++){
+        for(columna=0;columna<grilla_x;columna++){
             let c=new Cuadrados(w_c/2+w_c*columna,h_c/2+h_c*fila,w_c,h_c,fila,columna);
             malla_cuadrados.push(c);       
         }
@@ -42,7 +44,7 @@ function menu_colores(){
     //Línea divisoria
     stroke(155,56,89);//color de línea
     strokeWeight(4);
-    line(0, 5*h_c-2,5*w_c,5*h_c-2);
+    line(0, (grilla_y-1)*h_c-2,grilla_x*w_c,(grilla_y-1)*h_c-2);
     //Fin de línea divisoria
     //cuadrados de mando
     strokeWeight(1);
@@ -51,8 +53,7 @@ function menu_colores(){
     for (let i = 0; i < 5; i++) {
         fill(lista_colores[i]);
         rectMode(CENTER);
-        let rectangulo=rect(w_c/2+(w_c)*i, 5*h_c+h_c/2, w_c, h_c);    
-        
+        let rectangulo=rect(w_c/2+(w_c)*i, (grilla_y-1)*h_c+h_c/2, w_c, h_c);    
         mando_colores.push(rectangulo);
     }
 }
@@ -63,7 +64,7 @@ function mouseClicked(){
         for(let columna=0;columna<dx/w_c;columna++){
             if((w_c*columna<mouseX && mouseX<w_c*(columna+1)) &&(h_c*fila<mouseY && mouseY<h_c*(fila+1))){
                 //console.log(" fila: ", fila+1," columna: ",columna+1 );
-                let pos_aux=columna+5*fila;
+                let pos_aux=columna+(grilla_y-1)*fila;
                 let aux_x=malla_cuadrados[pos_aux].x;
                 let aux_y=malla_cuadrados[pos_aux].y;
                 let aux_cuadrado=new Cuadrados(aux_x,aux_y,w_c,h_c,fila,columna,color_actual);
@@ -79,7 +80,7 @@ function mouseClicked(){
     }
     //Grid de mandos
     colores=[{r:19,g:22,b:76},{r:19,g:76,b:40},{r:196,g:47,b:11},{r:242,g:245,b:2},{r:255,g:255,b:255}];
-    if(mouseY>5*h_c && mouseY<6*h_c){
+    if(mouseY>(grilla_y-1)*h_c && mouseY<grilla_y*h_c){
         for(let columna=0;columna<dx/w_c;columna++){
             if(w_c*columna<mouseX && mouseX<w_c*(columna+1)){
                 color_actual=colores[columna];

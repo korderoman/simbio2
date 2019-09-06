@@ -5,7 +5,7 @@ class Cuadrados{
         this.w_c=w_c;
         this.h_c=h_c;
         //colores
-        this.id=columna + 5*fila;
+        this.id=columna + 10*fila;
         this.mi_color=mi_color;
     }
     dibujarCuadrado(){
@@ -13,10 +13,6 @@ class Cuadrados{
         stroke(0);
         fill(this.mi_color.r,this.mi_color.g,this.mi_color.b);
         rect(this.x,this.y,this.w_c,this.h_c);
-    }
-
-    cambiarColor(){
-        
     }
 
 
