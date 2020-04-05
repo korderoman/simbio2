@@ -1,4 +1,4 @@
-var socket=io();
+var socket=io("/simbio8");
 var dx=5*window.innerWidth/6; //variable general del ancho
 var dy=5*window.innerHeight/6; //variable general del alto
 var grilla_y=11;
@@ -10,6 +10,7 @@ var malla_cuadrados=[] //cuadrícula de cuadrados
 
 var color_actual;
 function setup(){
+    
     let canvas=seteo_canvas(dx,dy);
     for(fila=0;fila<grilla_y-1;fila++){
         for(columna=0;columna<grilla_x;columna++){
