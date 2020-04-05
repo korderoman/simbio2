@@ -1,11 +1,11 @@
-const expres=require("express");
+const express=require("express");
 const path=require("path");
 const IO_server=require("socket.io");
-const app=expres();
+const app=express();
 
 
 //Archivos estáticos
-app.use(expres.static(path.join(__dirname,"frontend/public")));
+app.use(express.static(path.join(__dirname,"frontend/public")));
 //Habilitamos el servidor y asignamos a una variable que usará  socket io
 let servidor=app.listen(process.env.PORT || 3000,()=>{
     console.log("Estamos en línea");
