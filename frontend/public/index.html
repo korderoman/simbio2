@@ -4,36 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Bienvenidos</title>
 </head>
 <body>
-    <div class="container">
+    <div  id="container" class="container">
         <div class="row d-flex justify-content-center mt-5">
-                <div class="card">
+            <div id="menu">    
+            <div class="card">
                     <div class="card-header">
                         <h1 class="text-center">SimbioGame</h1>
                     </div>
-                    <div class="card-body">
-                        <div class="list-group" >
-                            <a class="list-group-item list-group-item-action" id="simbio1"  href="views/simbio1.html" >Simbio 1</a>
-                            <a class="list-group-item list-group-item-action" id="simbio2"  href="views/simbio2.html" >Simbio 2</a>
-                            <a class="list-group-item list-group-item-action" id="simbio3"  href="views/simbio3.html" >Simbio 3</a>
-                            <a class="list-group-item list-group-item-action" id="simbio4"  href="views/simbio4.html" >Simbio 4</a>
-                            <a class="list-group-item list-group-item-action" id="simbio5"  href="views/simbio5.html" >Simbio 5</a>
-                            <a class="list-group-item list-group-item-action" id="simbio6"  href="views/simbio6.html" >Simbio 6</a>
-                            <a class="list-group-item list-group-item-action" id="simbio7"  href="views/simbio7.html" >Simbio 7</a>
-                            <a class="list-group-item list-group-item-action" id="simbio8"  href="views/simbio8.html" >Simbio 8</a>
-                            <a class="list-group-item list-group-item-action" id="simbio9"  href="views/simbio9.html" >Simbio 9</a>
-                            <a class="list-group-item list-group-item-action" id="simbio10"  href="views/simbio10.html" >Simbio 10</a>
-            
+                    
+                        <div class="card-body">
+                            <div class="list-group" >
+                                <button type="button" id="simbio1" name="simbio1" class="list-group-item list-group-item-action">Simbio 1</button>
+                                <button type="button" id="simbio2" name="simbio2" class="list-group-item list-group-item-action">Simbio 2</button>
+                                <button type="button" id="simbio3" name="simbio3" class="list-group-item list-group-item-action">Simbio 3</button>
+                                <button type="button" id="simbio4" name="simbio4" class="list-group-item list-group-item-action">Simbio 4</button>
+                                <button type="button" id="simbio5" name="simbio5" class="list-group-item list-group-item-action">Simbio 5</button>
+                                <button type="button" id="simbio6" name="simbio6" class="list-group-item list-group-item-action">Simbio 6</button>
+                                <button type="button" id="simbio7" name="simbio7" class="list-group-item list-group-item-action">Simbio 7</button>
+                                <button type="button" id="simbio8" name="simbio8" class="list-group-item list-group-item-action">Simbio 8</button>
+                                <button type="button" id="simbio9" name="simbio9" class="list-group-item list-group-item-action">Simbio 9</button>
+                                <button type="button" id="simbio10" name="simbio10" class="list-group-item list-group-item-action">Simbio 10</button>
+    
+                
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    
+                    
+                    
+            </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/simbio.js"></script>
 </body>
 </html>
